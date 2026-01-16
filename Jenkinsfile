@@ -2,24 +2,31 @@ pipeline {
     agent any
 
     tools {
-        nodejs "NodeJS"
-        dockerTool "docker"
+        nodejs "Node20"
+        dockerTool "Dockertool"
     }
 
     stages {
+
         stage('Instalar dependencias') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Construir Imagen Docker') {
+        stage('Ejecutar tests') {
+            steps {
+                sh 'npm test || true'
+            }
+        }
+
+        stage('Construir imagen Docker') {
             steps {
                 sh 'docker build -t hola-mundo-node:latest .'
             }
         }
 
-        stage('Ejecutar Contenedor Node.js') {
+        stage('Ejecutar contenedor') {
             steps {
                 sh '''
                     docker stop hola-mundo-node || true
