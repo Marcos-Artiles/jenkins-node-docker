@@ -3,5 +3,10 @@
     "id": "1", 
     "name": "Marcos Artiles",
     "email": "marcos.artiles@uleam.edu.ec"
+    },
+    {
+    "id": "2", 
+    "name": "Prueba Deploy",
+    "email": "prueba.deploy@uleam.edu.ec"
     }
 ]
