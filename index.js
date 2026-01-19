@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Archivo JSON que actúa como base de datos
 const DB_FILE = './users.json';
